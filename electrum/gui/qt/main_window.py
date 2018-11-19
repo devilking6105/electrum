@@ -358,7 +358,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             # todo: update only unconfirmed tx
             self.history_list.update()
         elif event == 'ln_message':
-            lnworker, message = args
+            lnworker, message, htlc_id = args
             if lnworker == self.wallet.lnworker:
                 self.show_message(message)
         else:
